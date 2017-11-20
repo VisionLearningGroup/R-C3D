@@ -1,46 +1,31 @@
-# R-C3D
-code for R-C3D
+# R-C3D: Region Convolutional 3D Network for Temporal Activity Detection
 
+By Huijuan Xu, Abir Das and Kate Saenko (Boston University).
 
-### Disclaimer
+### Introduction
 
-The official Faster R-CNN code (written in MATLAB) is available [here](https://github.com/ShaoqingRen/faster_rcnn).
-If your goal is to reproduce the results in our NIPS 2015 paper, please use the [official code](https://github.com/ShaoqingRen/faster_rcnn).
-
-This repository contains a Python *reimplementation* of the MATLAB code.
-This Python implementation is built on a fork of [Fast R-CNN](https://github.com/rbgirshick/fast-rcnn).
-There are slight differences between the two implementations.
-In particular, this Python port
- - is ~10% slower at test-time, because some operations execute on the CPU in Python layers (e.g., 220ms / image vs. 200ms / image for VGG16)
- - gives similar, but not exactly the same, mAP as the MATLAB version
- - is *not compatible* with models trained using the MATLAB code due to the minor implementation differences
- - **includes approximate joint training** that is 1.5x faster than alternating optimization (for VGG16) -- see these [slides](https://www.dropbox.com/s/xtr4yd4i5e0vw8g/iccv15_tutorial_training_rbg.pdf?dl=0) for more information
-
-# *Faster* R-CNN: Towards Real-Time Object Detection with Region Proposal Networks
-
-By Shaoqing Ren, Kaiming He, Ross Girshick, Jian Sun (Microsoft Research)
-
-This Python implementation contains contributions from Sean Bell (Cornell) written during an MSR internship.
-
-Please see the official [README.md](https://github.com/ShaoqingRen/faster_rcnn/blob/master/README.md) for more details.
-
-Faster R-CNN was initially described in an [arXiv tech report](http://arxiv.org/abs/1506.01497) and was subsequently published in NIPS 2015.
+We propose a fast end-to-end Region Convolutional 3D Network (R-C3D) for activity detection in continuous video streams. The network encodes the frames with fully-convolutional 3D filters, proposes activity segments, then classifies and refines them based on pooled features within their boundaries.
 
 ### License
 
-Faster R-CNN is released under the MIT License (refer to the LICENSE file for details).
+R-C3D is released under the MIT License (refer to the LICENSE file for details).
 
-### Citing Faster R-CNN
+### Citing R-C3D
 
-If you find Faster R-CNN useful in your research, please consider citing:
+If you find R-C3D useful in your research, please consider citing:
 
-    @inproceedings{renNIPS15fasterrcnn,
-        Author = {Shaoqing Ren and Kaiming He and Ross Girshick and Jian Sun},
-        Title = {Faster {R-CNN}: Towards Real-Time Object Detection
-                 with Region Proposal Networks},
-        Booktitle = {Advances in Neural Information Processing Systems ({NIPS})},
-        Year = {2015}
+    @inproceedings{Xu2017iccv,
+        title = {R-C3D: Region Convolutional 3D Network for Temporal Activity Detection},
+        author = {Huijuan Xu and Abir Das and Kate Saenko},
+        booktitle = {Proceedings of the International Conference on Computer Vision (ICCV)},
+        year = {2017}
     }
+
+We build this repo based on C3D and Fater R-CNN. Please cite the following papers as well:
+
+Ren, Shaoqing, Kaiming He, Ross Girshick, and Jian Sun. "Faster R-CNN: Towards real-time object detection with region proposal networks." In Advances in neural information processing systems, pp. 91-99. 2015.
+
+Tran, Du, Lubomir Bourdev, Rob Fergus, Lorenzo Torresani, and Manohar Paluri. "Learning spatiotemporal features with 3d convolutional networks." In Proceedings of the IEEE international conference on computer vision, pp. 4489-4497. 2015.       
 
 ### Contents
 1. [Requirements: software](#requirements-software)
