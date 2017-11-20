@@ -21,19 +21,21 @@ If you find R-C3D useful in your research, please consider citing:
         year = {2017}
     }
 
-We build this repo based on C3D and Fater R-CNN. Please cite the following papers as well:
+We build this repo based on Fater R-CNN, C3D and ActivityNet dataset. Please cite the following papers as well:
 
 Ren, Shaoqing, Kaiming He, Ross Girshick, and Jian Sun. "Faster R-CNN: Towards real-time object detection with region proposal networks." In Advances in neural information processing systems, pp. 91-99. 2015.
 
-Tran, Du, Lubomir Bourdev, Rob Fergus, Lorenzo Torresani, and Manohar Paluri. "Learning spatiotemporal features with 3d convolutional networks." In Proceedings of the IEEE international conference on computer vision, pp. 4489-4497. 2015.       
+Tran, Du, Lubomir Bourdev, Rob Fergus, Lorenzo Torresani, and Manohar Paluri. "Learning spatiotemporal features with 3d convolutional networks." In Proceedings of the IEEE international conference on computer vision, pp. 4489-4497. 2015. 
+
+Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles. "Activitynet: A large-scale video benchmark for human activity understanding." In Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, pp. 961-970. 2015.
 
 ### Contents
 1. [Installation](#installation)
-2. [Training](#requirements-hardware)
+2. [Training](#training)
 3. [Pretrained model](#installation-sufficient-for-the-demo)
 4. [Testing](#demo)
 
-### installation
+### Installation:
 
 1. Clone the R-C3D repository
   ```Shell
@@ -44,57 +46,41 @@ Tran, Du, Lubomir Bourdev, Rob Fergus, Lorenzo Torresani, and Manohar Paluri. "L
 
   **Note:** Caffe must be built with Python support!
   
-    ```Shell
-    cd $RC3D_ROOT/caffe3d
-
+```Shell
+    cd ./caffe3d
+    
     # If have all of the requirements installed and your Makefile.config in place, then simply do:
     make -j8 && make pycaffe
-    ```
-
-### Demo
-
-*After successfully completing [basic installation](#installation-sufficient-for-the-demo)*, you'll be ready to run the demo.
-
-To run the demo
-```Shell
-cd $FRCN_ROOT
-./tools/demo.py
 ```
-The demo performs detection using a VGG16 network trained for detection on PASCAL VOC 2007.
 
-### Beyond the demo: installation for training and testing models
-1. Download the training, validation, test data and VOCdevkit
-
-	```Shell
-	wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtrainval_06-Nov-2007.tar
-	wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCtest_06-Nov-2007.tar
-	wget http://host.robots.ox.ac.uk/pascal/VOC/voc2007/VOCdevkit_08-Jun-2007.tar
-	```
-
-2. Extract all of these tars into one directory named `VOCdevkit`
+### Training:
+1. Download the ground truth annatations and videos in ActivityNet dataset.
 
 	```Shell
-	tar xvf VOCtrainval_06-Nov-2007.tar
-	tar xvf VOCtest_06-Nov-2007.tar
-	tar xvf VOCdevkit_08-Jun-2007.tar
+	
+	# Download the groud truth annotations in ActivityNet dataset.
+	wget http://ec2-52-11-11-89.us-west-2.compute.amazonaws.com/files/activity_net.v1-3.min.json
+	
+	# Download the videos in ActivityNet dataset into ./preprocess/activityNet/videos.
+	cd ./preprocess/activityNet/
+	python download_video.py
 	```
 
-3. It should have this basic structure
+2. Extract frames from downloaded videos in 25 fps:
+
+	```Shell
+	# training video frames are saved in ./preprocess/activityNet/frames/training/
+	# validation video frames are saved in ./preprocess/activityNet/frames/validation/ 
+	python generate_frames.py
+	```
+
+3. Generate the pickle data for traing R-C3D model
 
 	```Shell
   	$VOCdevkit/                           # development kit
-  	$VOCdevkit/VOCcode/                   # VOC utility code
-  	$VOCdevkit/VOC2007                    # image sets, annotations, etc.
-  	# ... and several other directories ...
   	```
 
-4. Create symlinks for the PASCAL VOC dataset
 
-	```Shell
-    cd $FRCN_ROOT/data
-    ln -s $VOCdevkit VOCdevkit2007
-    ```
-    Using symlinks is a good idea because you will likely want to share the same PASCAL dataset installation between multiple projects.
 5. [Optional] follow similar steps to get PASCAL VOC 2010 and 2012
 6. [Optional] If you want to use COCO, please see some notes under `data/README.md`
 7. Follow the next sections to download pre-trained ImageNet models
