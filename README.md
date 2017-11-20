@@ -28,81 +28,28 @@ Ren, Shaoqing, Kaiming He, Ross Girshick, and Jian Sun. "Faster R-CNN: Towards r
 Tran, Du, Lubomir Bourdev, Rob Fergus, Lorenzo Torresani, and Manohar Paluri. "Learning spatiotemporal features with 3d convolutional networks." In Proceedings of the IEEE international conference on computer vision, pp. 4489-4497. 2015.       
 
 ### Contents
-1. [Requirements: software](#requirements-software)
-2. [Requirements: hardware](#requirements-hardware)
-3. [Basic installation](#installation-sufficient-for-the-demo)
-4. [Demo](#demo)
-5. [Beyond the demo: training and testing](#beyond-the-demo-installation-for-training-and-testing-models)
-6. [Usage](#usage)
+1. [Installation](#installation)
+2. [Training](#requirements-hardware)
+3. [Pretrained model](#installation-sufficient-for-the-demo)
+4. [Testing](#demo)
 
-### Requirements: software
+### installation
 
-**NOTE** If you are having issues compiling and you are using a recent version of CUDA/cuDNN, please consult [this issue](https://github.com/rbgirshick/py-faster-rcnn/issues/509?_pjax=%23js-repo-pjax-container#issuecomment-284133868) for a workaround
-
-1. Requirements for `Caffe` and `pycaffe` (see: [Caffe installation instructions](http://caffe.berkeleyvision.org/installation.html))
-
-  **Note:** Caffe *must* be built with support for Python layers!
-
-  ```make
-  # In your Makefile.config, make sure to have this line uncommented
-  WITH_PYTHON_LAYER := 1
-  # Unrelatedly, it's also recommended that you use CUDNN
-  USE_CUDNN := 1
-  ```
-
-  You can download my [Makefile.config](https://dl.dropboxusercontent.com/s/6joa55k64xo2h68/Makefile.config?dl=0) for reference.
-2. Python packages you might not have: `cython`, `python-opencv`, `easydict`
-3. [Optional] MATLAB is required for **official** PASCAL VOC evaluation only. The code now includes unofficial Python evaluation code.
-
-### Requirements: hardware
-
-1. For training smaller networks (ZF, VGG_CNN_M_1024) a good GPU (e.g., Titan, K20, K40, ...) with at least 3G of memory suffices
-2. For training Fast R-CNN with VGG16, you'll need a K40 (~11G of memory)
-3. For training the end-to-end version of Faster R-CNN with VGG16, 3G of GPU memory is sufficient (using CUDNN)
-
-### Installation (sufficient for the demo)
-
-1. Clone the Faster R-CNN repository
+1. Clone the R-C3D repository
   ```Shell
-  # Make sure to clone with --recursive
-  git clone --recursive https://github.com/rbgirshick/py-faster-rcnn.git
+  git clone --recursive git@github.com:VisionLearningGroup/R-C3D.git
   ```
+  
+2. Build `Caffe3d` with `pycaffe` (see: [Caffe installation instructions](http://caffe.berkeleyvision.org/installation.html))
 
-2. We'll call the directory that you cloned Faster R-CNN into `FRCN_ROOT`
-
-   *Ignore notes 1 and 2 if you followed step 1 above.*
-
-   **Note 1:** If you didn't clone Faster R-CNN with the `--recursive` flag, then you'll need to manually clone the `caffe-fast-rcnn` submodule:
+  **Note:** Caffe must be built with Python support!
+  
     ```Shell
-    git submodule update --init --recursive
-    ```
-    **Note 2:** The `caffe-fast-rcnn` submodule needs to be on the `faster-rcnn` branch (or equivalent detached state). This will happen automatically *if you followed step 1 instructions*.
+    cd $RC3D_ROOT/caffe3d
 
-3. Build the Cython modules
-    ```Shell
-    cd $FRCN_ROOT/lib
-    make
-    ```
-
-4. Build Caffe and pycaffe
-    ```Shell
-    cd $FRCN_ROOT/caffe-fast-rcnn
-    # Now follow the Caffe installation instructions here:
-    #   http://caffe.berkeleyvision.org/installation.html
-
-    # If you're experienced with Caffe and have all of the requirements installed
-    # and your Makefile.config in place, then simply do:
+    # If have all of the requirements installed and your Makefile.config in place, then simply do:
     make -j8 && make pycaffe
     ```
-
-5. Download pre-computed Faster R-CNN detectors
-    ```Shell
-    cd $FRCN_ROOT
-    ./data/scripts/fetch_faster_rcnn_models.sh
-    ```
-
-    This will populate the `$FRCN_ROOT/data` folder with `faster_rcnn_models`. See `data/README.md` for details.
-    These models were trained on VOC 2007 trainval.
 
 ### Demo
 
