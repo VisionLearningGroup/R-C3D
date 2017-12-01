@@ -31,18 +31,18 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 
 ### Contents
 1. [Installation](#installation)
-2. [Preparation](#prepraration)
+2. [Preparation](#preparation)
 3. [Training](#training)
 4. [Testing](#testing)
 
 ### Installation:
 
-1. Clone the R-C3D repository
+1. Clone the R-C3D repository.
   	```Shell
   	git clone --recursive git@github.com:VisionLearningGroup/R-C3D.git
   	```
   
-2. Build `Caffe3d` with `pycaffe` (see: [Caffe installation instructions](http://caffe.berkeleyvision.org/installation.html))
+2. Build `Caffe3d` with `pycaffe` (see: [Caffe installation instructions](http://caffe.berkeleyvision.org/installation.html)).
 
 	**Note:** Caffe must be built with Python support!
   
@@ -53,7 +53,7 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 	make -j8 && make pycaffe
 	```
 
-3. Build R-C3D lib folder
+3. Build R-C3D lib folder.
 
 	```Shell
 	cd ./lib    
@@ -65,16 +65,16 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 1. Download the ground truth annatations and videos in ActivityNet dataset.
 
 	```Shell
+	cd ./preprocess/activityNet/
 	
 	# Download the groud truth annotations in ActivityNet dataset.
 	wget http://ec2-52-11-11-89.us-west-2.compute.amazonaws.com/files/activity_net.v1-3.min.json
 	
 	# Download the videos in ActivityNet dataset into ./preprocess/activityNet/videos.
-	cd ./preprocess/activityNet/
 	python download_video.py
 	```
 
-2. Extract frames from downloaded videos in 25 fps:
+2. Extract frames from downloaded videos in 25 fps.
 
 	```Shell
 	# training video frames are saved in ./preprocess/activityNet/frames/training/
@@ -82,7 +82,7 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 	python generate_frames.py
 	```
 
-3. Generate the pickle data for traing R-C3D model
+3. Generate the pickle data for training R-C3D model.
 
 	```Shell
   	# generate training data
@@ -92,15 +92,15 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
   	```
 
 ### Training:
+	
+1. Download C3D classification pretrain model to ./pretrain/:
 
-1. In R-C3D root folder, run
+The C3D model weight pretrained on Sports1M and finetuned on ActivityNet dataset is provided in: [caffemodel](https://drive.google.com/file/d/131Cpuq1FndydeHzu38TY0baiS-uyN71w/view)
+
+2. In R-C3D root folder, run:
 	```Shell
 	./experiments/activitynet/script_train.sh
   	```
-	
-2. Pretrain model 
-
-C3D is provided in
 
 ### Testing
 
