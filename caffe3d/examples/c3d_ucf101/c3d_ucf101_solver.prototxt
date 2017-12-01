@@ -1,0 +1,27 @@
+net: "examples/c3d_ucf101/c3d_ucf101_train_test.prototxt"
+# num test samples / batch_size = 41822/10 = 4182, but only 100 iterations
+# are used for testing to speed up training
+# optionally run test on train set, to monitor overfitting
+#test_iter: 100
+#test_state: { stage: 'test-on-train' }
+test_iter: 100
+test_state: { stage: 'test-on-val' }
+test_interval: 1000
+base_lr: 0.003
+momentum: 0.9
+weight_decay: 0.005
+lr_policy: "step"
+gamma: 0.1
+# original paper uses gamma of 0.1 every 4 epochs
+# using batch_size=15, 2 GPUs, stepsize = 4*(107258/15/2) to match original results
+# https://arxiv.org/pdf/1412.0767.pdf: figure 2 -- ~45% clip accuracy around
+# 6th spoch
+stepsize: 14301
+# Display every 20 iterations
+display: 20
+# The maximum number of iterations: 10 epochs
+max_iter: 143010
+# snapshot intermediate results
+snapshot: 5000
+snapshot_prefix: "examples/c3d_ucf101/c3d_ucf101"
+solver_mode: GPU

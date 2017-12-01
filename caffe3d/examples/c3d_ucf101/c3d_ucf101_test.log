@@ -1,0 +1,16 @@
+I1202 13:59:40.355363 31686 caffe.cpp:270] Use GPU with device ID 0
+I1202 13:59:40.375721 31686 caffe.cpp:274] GPU device name: GeForce GTX TITAN X
+[libprotobuf ERROR google/protobuf/text_format.cc:245] Error parsing text-format caffe.NetParameter: 44:18: Message type "caffe.ConvolutionParameter" has no field named "kernel_shape".
+F1202 13:59:40.721417 31686 upgrade_proto.cpp:88] Check failed: ReadProtoFromTextFile(param_file, param) Failed to parse NetParameter file: examples/c3d_ucf101/c3d_ucf101_test.prototxt
+*** Check failure stack trace: ***
+    @     0x7f1525738daa  (unknown)
+    @     0x7f1525738ce4  (unknown)
+    @     0x7f15257386e6  (unknown)
+    @     0x7f152573b687  (unknown)
+    @     0x7f1525dac67e  caffe::ReadNetParamsFromTextFileOrDie()
+    @     0x7f1525d8811f  caffe::Net<>::Net()
+    @           0x4075ab  test()
+    @           0x405e6c  main
+    @     0x7f1523f93f45  (unknown)
+    @           0x406773  (unknown)
+    @              (nil)  (unknown)
