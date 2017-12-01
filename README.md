@@ -82,7 +82,7 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 	python generate_frames.py
 	```
 
-3. Generate the pickle data for training R-C3D model.
+3. Generate the pickle data for training and testing R-C3D model.
 
 	```Shell
   	# generate training data
