@@ -95,7 +95,7 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 	
 1. Download C3D classification pretrain model to ./pretrain/:
 
-The C3D model weight pretrained on Sports1M and finetuned on ActivityNet dataset is provided in: [caffemodel](https://drive.google.com/file/d/131Cpuq1FndydeHzu38TY0baiS-uyN71w/view)
+   The C3D model weight pretrained on Sports1M and finetuned on ActivityNet dataset is provided in: [caffemodel](https://drive.google.com/file/d/131Cpuq1FndydeHzu38TY0baiS-uyN71w/view)
 
 2. In R-C3D root folder, run:
 	```Shell
@@ -104,7 +104,7 @@ The C3D model weight pretrained on Sports1M and finetuned on ActivityNet dataset
 
 ### Testing
 
-1. In R-C3D root folder, run to generate the log file
+1. In R-C3D root folder, generate the prediction log file on the validation set.
 	```Shell
 	./experiments/activitynet/test/script_test.sh
   	```
