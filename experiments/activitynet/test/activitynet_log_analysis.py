@@ -36,7 +36,7 @@ def nms(dets, thresh=0.4):
     return keep
 
 def generate_classes():
-  META_FILE = '../../../activityNet/activity_net.v1-3.min.json'
+  META_FILE = '../../../preprocess/activityNet/activity_net.v1-3.min.json'
   data = json.load(open(META_FILE))
   class_list = []
   for vid, vinfo in data['database'].iteritems():
@@ -119,7 +119,7 @@ def analysis_log(logfile, thresh):
 segmentations = analysis_log(logfile, thresh = 0.005)
 
 
-def select_top(segmentations, nms_thresh=0.9999, num_cls=0, topk=0):
+def select_top(segmentations, nms_thresh=0.99999, num_cls=0, topk=0):
   res = {}
   for vid, vinfo in segmentations.iteritems():
     # select most likely classes
