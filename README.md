@@ -31,9 +31,8 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 
 ### Contents
 1. [Installation](#installation)
-2. [Data Preparation](#Data Prepraration)
+2. [Data Preparation](#data prepraration)
 3. [Training](#training)
-4. [Pretrained model](#installation-sufficient-for-the-demo)
 4. [Testing](#demo)
 
 ### Installation:
@@ -96,11 +95,31 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 
 ### Training:
 
-1. 
+1. In R-C3D root folder, run
+	```Shell
+	./experiments/activitynet/script_train.sh
+  	```
+	
+2. Pretrain model 
 
-5. [Optional] follow similar steps to get PASCAL VOC 2010 and 2012
-6. [Optional] If you want to use COCO, please see some notes under `data/README.md`
-7. Follow the next sections to download pre-trained ImageNet models
+C3D is provided in
+
+### Testing
+
+1. In R-C3D root folder, run to generate the log file
+	```Shell
+	./experiments/activitynet/test/script_test.sh
+  	```
+	
+2. In ./experiments/activitynet/test folder, run to get the results.json file
+	```Shell
+	python activitynet_log_analysis.py test_log_<iters>.txt.*
+  	```
+
+3. In ./experiments/activitynet/test/Evaluation folder, run to get the evaluation result
+	```Shell
+	python get_detection_performance.py ../results.json
+  	```
 
 ### Download pre-trained ImageNet models
 
