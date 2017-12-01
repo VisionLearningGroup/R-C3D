@@ -31,9 +31,9 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 
 ### Contents
 1. [Installation](#installation)
-2. [Data Preparation](#data prepraration)
+2. [Preparation](#prepraration)
 3. [Training](#training)
-4. [Testing](#demo)
+4. [Testing](#testing)
 
 ### Installation:
 
