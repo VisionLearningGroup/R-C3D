@@ -38,29 +38,27 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 ### Installation:
 
 1. Clone the R-C3D repository
-  ```Shell
-  git clone --recursive git@github.com:VisionLearningGroup/R-C3D.git
-  ```
+  	```Shell
+  	git clone --recursive git@github.com:VisionLearningGroup/R-C3D.git
+  	```
   
 2. Build `Caffe3d` with `pycaffe` (see: [Caffe installation instructions](http://caffe.berkeleyvision.org/installation.html))
 
   **Note:** Caffe must be built with Python support!
   
-   ```Shell
-   cd ./caffe3d
+	```Shell
+	cd ./caffe3d
     
-   # If have all of the requirements installed and your Makefile.config in place, then simply do:
-   make -j8 && make pycaffe
-   ```
+	# If have all of the requirements installed and your Makefile.config in place, then simply do:
+	make -j8 && make pycaffe
+ 	```
 
 3. Build R-C3D lib folder
 
-   ```Shell
-   cd ./lib
-    
-   # If have all of the requirements installed and your Makefile.config in place, then simply do:
-   make
-   ```
+	```Shell
+	cd ./lib    
+	make
+	```
 
 ### Preparation:
 
