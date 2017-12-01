@@ -102,13 +102,14 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 	./experiments/activitynet/script_train.sh
   	```
 
-### Testing
+### Testing:
 
 1. Download one sample R-C3D model to ./snapshot/ .
 
    One R-C3D model on ActivityNet dataset is provided in: [caffemodel .](https://drive.google.com/file/d/1wkDwwdqEt6S0xduR4PWalGZaXpxjsX_j/view)
 
    The provided R-C3D model has the Average-mAP 14.4% on the validation set.
+   
    
 2. In R-C3D root folder, generate the prediction log file on the validation set.
 	```Shell
