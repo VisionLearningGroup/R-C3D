@@ -62,7 +62,7 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
    make
    ```
 
-### Data Preparation:
+### Preparation:
 
 1. Download the ground truth annatations and videos in ActivityNet dataset.
 
