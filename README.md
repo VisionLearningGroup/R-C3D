@@ -31,8 +31,9 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 
 ### Contents
 1. [Installation](#installation)
-2. [Training](#training)
-3. [Pretrained model](#installation-sufficient-for-the-demo)
+2. [Data Preparation](#Data Prepraration)
+3. [Training](#training)
+4. [Pretrained model](#installation-sufficient-for-the-demo)
 4. [Testing](#demo)
 
 ### Installation:
@@ -46,14 +47,24 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 
   **Note:** Caffe must be built with Python support!
   
-```Shell
-    cd ./caffe3d
+   ```Shell
+   cd ./caffe3d
     
-    # If have all of the requirements installed and your Makefile.config in place, then simply do:
-    make -j8 && make pycaffe
-```
+   # If have all of the requirements installed and your Makefile.config in place, then simply do:
+   make -j8 && make pycaffe
+   ```
 
-### Training:
+3. Build R-C3D lib folder
+
+   ```Shell
+   cd ./lib
+    
+   # If have all of the requirements installed and your Makefile.config in place, then simply do:
+   make
+   ```
+
+### Data Preparation:
+
 1. Download the ground truth annatations and videos in ActivityNet dataset.
 
 	```Shell
@@ -77,9 +88,15 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 3. Generate the pickle data for traing R-C3D model
 
 	```Shell
-  	$VOCdevkit/                           # development kit
+  	# generate training data
+	python generate_roidb_training.py
+  	# generate validation data
+	python generate_roidb_validation.py
   	```
 
+### Training:
+
+1. 
 
 5. [Optional] follow similar steps to get PASCAL VOC 2010 and 2012
 6. [Optional] If you want to use COCO, please see some notes under `data/README.md`
