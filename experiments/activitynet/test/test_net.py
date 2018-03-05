@@ -7,7 +7,7 @@
 # Written by Huijuan Xu
 # --------------------------------------------------------
 
-"""Test a R-C3D network on an image database."""
+"""Test a R-C3D network on a video database."""
 
 import _init_paths
 from tdcnn.test import test_net
