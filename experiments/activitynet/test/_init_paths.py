@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 
 # --------------------------------------------------------
-# TD-CNN
-# Copyright (c) 2016 Boston Univ.
+# R-C3D
+# Copyright (c) 2017 Boston Univ.
 # Licensed under The MIT License [see LICENSE for details]
 # Written by Huijuan Xu
 # --------------------------------------------------------
 
-"""Set up paths for TD-CNN."""
+"""Set up paths for R-C3D."""
 
 import os.path as osp
 import sys
