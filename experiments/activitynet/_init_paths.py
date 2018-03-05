@@ -7,7 +7,7 @@
 # Written by Huijuan Xu
 # --------------------------------------------------------
 
-"""Set up paths for TD-CNN."""
+"""Set up paths for R-C3D."""
 
 import os.path as osp
 import sys
