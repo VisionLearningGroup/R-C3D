@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 
 # --------------------------------------------------------
-# TD-CNN
-# Copyright (c) 2016 Boston Univ.
+# R-C3D
+# Copyright (c) 2017 Boston Univ.
 # Licensed under The MIT License [see LICENSE for details]
 # Written by Huijuan Xu
 # --------------------------------------------------------
