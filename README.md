@@ -128,6 +128,7 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
 	python get_detection_performance.py data/activity_net.v1-3.min.json ../results.json
   	```
 	
-### Notes: The code for THUMOS'14 dataset and charades dataset is uploaded to the correspoding folder.
+### Notes: 
+### The code for THUMOS'14 dataset and charades dataset is uploaded to the correspoding folder.
 
 
