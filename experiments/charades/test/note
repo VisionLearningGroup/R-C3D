@@ -1,0 +1,7 @@
+
+### change the path prefix ${PATH}
+
+
+[rec_all,prec_all,ap_all,map]=Charades_v1_localize('results.txt','${PATH}/Charades_v1_test.csv');
+
+

@@ -1,0 +1,11 @@
+
+
+
+#python activitynet_log_analysis.py test_log_76.*
+
+
+python activitynet_log_analysis.py ../test_log_53.txt.2017-04-20_17-15-41
+
+python ./Evaluation/get_detection_performance.py ./thumos14_gt_test.json ./results.json
+
+
