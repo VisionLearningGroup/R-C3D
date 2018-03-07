@@ -129,6 +129,6 @@ Caba Heilbron, Fabian, Victor Escorcia, Bernard Ghanem, and Juan Carlos Niebles.
   	```
 	
 ### Notes: 
-### The code for THUMOS'14 dataset and charades dataset is uploaded to the correspoding folder.
+### The codes for THUMOS'14 dataset and Charades dataset are uploaded to the corresponding folders.
 
 
