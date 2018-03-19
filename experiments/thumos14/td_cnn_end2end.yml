@@ -10,7 +10,7 @@ TRAIN:
   LENGTH: [512]
 TEST:
   HAS_RPN: True
-  NMS: 0.9999
+  NMS: 0.3
   RPN_MIN_SIZE: 8
   LENGTH: [512]
 
