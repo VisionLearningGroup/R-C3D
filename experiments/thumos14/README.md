@@ -29,5 +29,4 @@ pp. 4489-4497. 2015.
     [ 0.555  0.527   0.473  0.391  0.288 ]
 
 note: change the nms_thresh in the file activitynet_log_analysis.py to be (evaluation threshold-0.1) as mentioned in papers.
-
 def select_top(segmentations, nms_thresh=0.4, num_cls=0, topk=0):
