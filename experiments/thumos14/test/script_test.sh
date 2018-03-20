@@ -5,7 +5,7 @@ EX_DIR=thumos14
 
 export PYTHONUNBUFFERED=true
 
-iter=53
+iter=52
 
 
 LOG="experiments/${EX_DIR}/test/test_log_${i}.txt.`date +'%Y-%m-%d_%H-%M-%S'`"
