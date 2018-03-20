@@ -23,8 +23,8 @@ pp. 4489-4497. 2015.
 
 1. Download one sample R-C3D model to ./snapshot/ .
 
-   One R-C3D model on THUMOS'14 dataset is provided in: [caffemodel](https://drive.google.com/file/d/1Mc0pWlbRsOKkUsV5F0ZCvu_F3Aq2O_Lk/view)
+   One R-C3D model on THUMOS'14 dataset is provided in: [caffemodel](https://drive.google.com/file/d/1WpvkqvL19m2ZMtQ0_j5EI1WycitHMT1e/view)
 
-   The provided R-C3D model has the mAP@0.5 29.9% on the test set.
-
+   The provided R-C3D model should have the following mAP@{0.1-0.5} on the test set:
+    [ 0.55548106  0.52708093   0.47302677  0.3914865  0.28760134 ]
 
