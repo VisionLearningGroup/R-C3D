@@ -106,7 +106,7 @@ def analysis_log(logfile, thresh):
   predict_data = []
   res = {}
   for l in lines:
-    if "gt_classes :" in l:
+    if "frames :" in l:
       predict_data = []
     predict_data.append(l)
     if "im_detect:" in l:
