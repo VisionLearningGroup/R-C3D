@@ -83,7 +83,7 @@ def get_segments(data):
 segmentations = {}
 predict_data = []
 for l in lines:
-  if "gt_classes :" in l:
+  if "frames :" in l:
     predict_data = []
   predict_data.append(l)
   if "im_detect:" in l:
