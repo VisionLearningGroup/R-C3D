@@ -12,7 +12,7 @@ import cv2
 
 def generate_classes(data):
   class_list = []
-  for vid, vinfo in data['database'].iteritems():
+  for vid, vinfo in data['database'].items():
     for item in vinfo['annotations']:
       class_list.append(item['label'])
 
@@ -28,7 +28,7 @@ def generate_segment(split, data, classes):
   VIDEO_PATH = 'frames/%s/' % split
   video_list = set(os.listdir(VIDEO_PATH))
   # get time windows based on video key
-  for vid, vinfo in data['database'].iteritems():
+  for vid, vinfo in data['database'].items():
     vid_name = [v for v in video_list if vid in v]
     if len(vid_name) == 1:
       if vinfo['subset'] == split:

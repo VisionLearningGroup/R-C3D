@@ -2,7 +2,7 @@
 # R-C3D
 # Copyright (c) 2017 Boston University
 # Licensed under The MIT License [see LICENSE for details]
-# Written by Huijuan Xu
+# WrittccPen by Huijuan Xu
 # --------------------------------------------------------
 
 import os
@@ -23,10 +23,10 @@ WINS = [LENGTH * 8]
 META_FILE = './activity_net.v1-3.min.json'
 data = json.load(open(META_FILE))
 
-print 'Generate Classes'
+print('Generate Classes')
 classes = generate_classes(data)
 
-print 'Generate Training Segments'
+print('Generate Training Segments')
 train_segment = generate_segment('training', data, classes)
 
 path = './preprocess/activityNet/frames/'
@@ -42,7 +42,7 @@ def generate_roi(rois, video, start, end, stride, split):
   tmp['bg_name'] = path + split + '/' + video
   tmp['fg_name'] = path + split + '/' + video
   if not os.path.isfile('../../' + tmp['bg_name'] + '/image_' + str(end-1).zfill(5) + '.jpg'):
-    print '../../' + tmp['bg_name'] + '/image_' + str(end-1).zfill(5) + '.jpg'
+    print('../../' + tmp['bg_name'] + '/image_' + str(end-1).zfill(5) + '.jpg')
     raise
   return tmp
 
@@ -128,6 +128,6 @@ def generate_roidb(split, segment):
 USE_FLIPPED = True      
 train_roidb = generate_roidb('training', train_segment)
 
-print "Save dictionary"
+print("Save dictionary")
 cPickle.dump(train_roidb, open('train_data_3fps_flipped.pkl','w'), cPickle.HIGHEST_PROTOCOL)
 

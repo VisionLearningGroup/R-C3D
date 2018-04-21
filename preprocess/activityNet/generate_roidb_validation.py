@@ -44,7 +44,9 @@ def generate_roidb(split):
   for i,vid in enumerate(video_list):
     print i
     length = len(os.listdir('./frames/' + split + '/' + vid))
-
+    if length ==0:
+       print('length =0 in' + str(vid))
+       continue
     for win in WINS:
       stride = win / LENGTH
       step = stride * STEP

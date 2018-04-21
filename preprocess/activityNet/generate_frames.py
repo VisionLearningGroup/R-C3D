@@ -20,7 +20,7 @@ meta_data = json.load(open(META_FILE))
 mkdir('./frames')
 def generate_frame(split):
   mkdir('./frames/%s' % split)
-  for vid, vinfo in meta_data['database'].iteritems():
+  for vid, vinfo in meta_data['database'].items():
     if vinfo['subset'] == split:
       vname = [s for s in video_list if vid in s]
       if len(vname) != 0 :
@@ -34,7 +34,7 @@ def generate_frame(split):
         for framename in os.listdir(outpath):
           resize(outpath + framename)
         frame_size = len(os.listdir(outpath))
-        print filename, duration, fps, frame_size
+        # print filename, duration, fps, frame_size
 
 generate_frame('training')
 generate_frame('validation')

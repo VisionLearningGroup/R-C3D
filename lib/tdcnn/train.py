@@ -10,6 +10,7 @@
 import caffe
 from tdcnn.config import cfg
 import roi_data_layer.roidb as rdl_roidb
+import google.protobuf.text_format
 from utils.timer import Timer
 import numpy as np
 import os
@@ -114,7 +115,7 @@ def train_net(solver_prototxt, roidb, output_dir,
               pretrained_model=None, max_iters=40000):
     """Train a R-C3D network."""
 
-    roidb = filter_roidb(roidb)
+    # roidb = filter_roidb(roidb)
     sw = SolverWrapper(solver_prototxt, roidb, output_dir,
                        pretrained_model=pretrained_model)
 
