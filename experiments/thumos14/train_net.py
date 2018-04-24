@@ -18,7 +18,7 @@ import cPickle
 import copy
 
 from tdcnn.config import cfg, cfg_from_file, cfg_from_list
-from tdcnn.train import get_training_roidb, train_net
+from tdcnn.train import train_net
 
 def parse_args():
     """
