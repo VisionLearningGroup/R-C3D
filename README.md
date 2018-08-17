@@ -21,7 +21,7 @@ If you find R-C3D useful in your research, please consider citing:
         year = {2017}
     }
 
-We build this repo based on Fater R-CNN, C3D and ActivityNet dataset. Please cite the following papers as well:
+We build this repo based on Faster R-CNN, C3D and ActivityNet dataset. Please cite the following papers as well:
 
 Ren, Shaoqing, Kaiming He, Ross Girshick, and Jian Sun. "Faster R-CNN: Towards real-time object detection with region proposal networks." In Advances in neural information processing systems, pp. 91-99. 2015.
 
