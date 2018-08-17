@@ -119,7 +119,7 @@ void ROIPoolingLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,
             bool is_empty = (hend <= hstart) || (wend <= wstart) ||
                             (lend <= lstart);
 
-            const int pool_index = (pl * pooled_length_ + ph) * pooled_width_ + pw;
+            const int pool_index = (pl * pooled_height_ + ph) * pooled_width_ + pw;
             if (is_empty) {
               top_data[pool_index] = 0;
               argmax_data[pool_index] = -1;
@@ -128,7 +128,7 @@ void ROIPoolingLayer<Dtype>::Forward_cpu(const vector<Blob<Dtype>*>& bottom,
             for (int l = lstart; l < lend; ++l) {
               for (int h = hstart; h < hend; ++h) {
                 for (int w = wstart; w < wend; ++w) {
-                  const int index = (l * length_ + h) * width_ + w;
+                  const int index = (l * height_ + h) * width_ + w;
                   if (batch_data[index] > top_data[pool_index]) {
                     top_data[pool_index] = batch_data[index];
                     argmax_data[pool_index] = index;
