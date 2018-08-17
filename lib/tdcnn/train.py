@@ -15,7 +15,7 @@ import numpy as np
 import os
 
 from caffe.proto import caffe_pb2
-import google.protobuf as pb2
+from google.protobuf import text_format
 
 class SolverWrapper(object):
     """A simple wrapper around Caffe's solver.
@@ -48,7 +48,7 @@ class SolverWrapper(object):
 
         self.solver_param = caffe_pb2.SolverParameter()
         with open(solver_prototxt, 'rt') as f:
-            pb2.text_format.Merge(f.read(), self.solver_param)
+            text_format.Merge(f.read(), self.solver_param)
 
         if not cfg.TRAIN.CINPUT:
           self.solver.net.layers[0].set_roidb(roidb)
@@ -114,7 +114,7 @@ def train_net(solver_prototxt, roidb, output_dir,
               pretrained_model=None, max_iters=40000):
     """Train a R-C3D network."""
 
-    roidb = filter_roidb(roidb)
+    # roidb = filter_roidb(roidb)
     sw = SolverWrapper(solver_prototxt, roidb, output_dir,
                        pretrained_model=pretrained_model)
 
